@@ -6,6 +6,7 @@ public class TopDownMovement : MonoBehaviour
 {
     private TopDownController movementController;
     private Rigidbody2D movementRigidbody;
+    private Animator animator;
 
     private Vector2 movementDirection = Vector2.zero;
 
@@ -13,6 +14,7 @@ public class TopDownMovement : MonoBehaviour
     {
         movementController = GetComponent<TopDownController>();
         movementRigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -40,4 +42,8 @@ public class TopDownMovement : MonoBehaviour
 
         movementRigidbody.velocity = direction;
     }
+
+    
+
+    
 }

@@ -14,6 +14,8 @@ public class PlayerInputController : TopDownController
         Vector2 moveInput = value.Get<Vector2>().normalized;
         CallMoveEvent(moveInput); 
         // 실ㅈ데 움직이는 처리는 여기가 아니라 PlayerMovement에서
+        
+        
     }
 
     public void OnLook(InputValue value)
