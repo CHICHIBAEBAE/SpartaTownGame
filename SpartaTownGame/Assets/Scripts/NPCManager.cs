@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NPCManager : MonoBehaviour
 {
     public GameObject npcPanel;
 
-    public void OnTriggerEnter2D(Collision other)
+    public void OnTriggerEnter2D(Collider other)
     {
-        npcPanel.SetActive(true);
+        if (other.transform.tag == "Player")
+        {
+            npcPanel.SetActive(true);
+        }
+            
     }
 }

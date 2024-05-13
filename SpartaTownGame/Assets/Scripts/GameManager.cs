@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject renamePanal;
     [SerializeField] private TMP_InputField inputField_ReName;
     public GameObject characterPanel;
+    public GameObject participantPanel;
 
     public string playerName;
     public string userName;
@@ -32,13 +33,13 @@ public class GameManager : MonoBehaviour
         timeTxt.text = DateTime.Now.ToString(("HH:mm"));
     }
 
-    public void RenameBtn()
-    {
-        renamePanal.SetActive(true);
-    }
+   
 
     public void Rename()
     {
+        // 원래 PlayerName 클래스에 Update 메서드 안에서 진행했는데 그렇게 하니 적용이 안됐다.
+        // 근데 게임을 종료했다가 다시 키면 전에 썼던 이름이 이제서야 바뀌는걸 보고 업데이트에 있으면 안된다고 판단.
+        // 버튼을 누르는 시점에 변경되도록 GameManager로 옮김
         playerName = inputField_ReName.GetComponent<TMP_InputField>().text;
         PlayerPrefs.SetString(userName, playerName);
 
@@ -66,10 +67,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
+
+    public void RenameBtn()
+    {
+        renamePanal.SetActive(true);
+    }
+
     public void CharacterChoiceBtn()
     {
         characterPanel.SetActive(true);
     }
 
-  
+    public void ParticipantBtn()
+    {
+        participantPanel.SetActive(true);
+    }
+
+    public void XBtn()
+    {
+        participantPanel.SetActive(false);
+    }
 }
