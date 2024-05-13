@@ -19,14 +19,14 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            PlayerMoveCheck();
+            //PlayerMoveCheck();
         }
-        private void PlayerMoveCheck()
-        {
-            bool PlayerSpeed = Mathf.Abs(movementRigidbody.velocity.magnitude) > Mathf.Epsilon;
-            animator.SetBool("isRun", PlayerSpeed);
-        }
-            
+        //private void PlayerMoveCheck()
+        //{
+        //    bool PlayerSpeed = Mathf.Abs(movementRigidbody.velocity.magnitude) > Mathf.Epsilon;
+        //    animator.SetBool("isRun", PlayerSpeed);
+        //}
+
 
     }
 }

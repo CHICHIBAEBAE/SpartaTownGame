@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class LoginManager : MonoBehaviour
 {
 
-    public GameObject ErrorMessage;
+    [SerializeField] private GameObject errorMessage;
 
-    public TMP_InputField inputField_Name;
+    [SerializeField] private TMP_InputField inputField_Name;
     public string playerName;
     public string userName;
 
@@ -21,10 +21,10 @@ public class LoginManager : MonoBehaviour
 
         while (click)
         {
-          //플레이어 이름이 2~10글자가 아닐경우 경고메시지 출력
+            //플레이어 이름이 2~10글자가 아닐경우 경고메시지 출력
             if (playerName.Length > 10 || playerName.Length < 2)
             {
-                ErrorMessage.SetActive(true);
+                errorMessage.SetActive(true);
                 click = false;
                 Invoke("DownError", 3);
 
@@ -40,12 +40,6 @@ public class LoginManager : MonoBehaviour
     }
     public void DownError()
     {
-        ErrorMessage.SetActive(false);
+        errorMessage.SetActive(false);
     }
-
-              
-
-
-        
-
 }
